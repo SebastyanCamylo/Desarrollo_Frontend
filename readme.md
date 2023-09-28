@@ -13,7 +13,7 @@ repositorio Backend
 
 desarrolladores
 
- <a href="">Ronald</a>;
+ <a href="https://github.com/RonaldV17?tab=repositories">Ronald</a>;
 
  <a href="">Felipe</a>;
 
