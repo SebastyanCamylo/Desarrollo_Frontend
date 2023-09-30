@@ -15,46 +15,36 @@ export default function Navbar() {
 
 
 
+   
     return (
         <nav>
-        <div className="d-flex ">
-            <div className="  navHom">
-            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/" > 👀 Anime Shop </NavLink>
-            </div>
-       
-
-            <div className="d-flex">
-                <div className=" navHom car">
-                <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/Productos" > Productos</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/car" >🛒{FormatCoin(total)}</NavLink>
+            <div className="d-flex_1">
+                <div className="navHom">
+                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/" > 👀 Anime Shop </NavLink>
                 </div>
 
-                {!usuario && (
-                <div className="  navHom car">
-                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/registro" >Registrar</NavLink>
-                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/login" >Iniciar Sesión</NavLink>
-                    
-                </div>
-                )}
+                <div className="d-flex">
+                    {/* Rutas no protegidas */}
+                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/Productos" > Productos</NavLink>
+                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/car" >🛒{FormatCoin(total)}</NavLink>
 
-                {/* rutas protegidas */}
-                {usuario ? (
-                <div className="d-flex ">
-                    <div className="navHom car">
-                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/perfil" >Perfil</NavLink>
-                    </div>
-                    <div className="navHom car">
-                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/mispedidos" >Mis Pedidos</NavLink>
-                    </div>
-                    <div className="navHom car">
-                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/favoritos" > Favoritos</NavLink>
-                    </div>
-                    <div className="navHom car">
-                    <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/logout" > Logout</NavLink>
-                    </div>
+                    {!usuario && (
+                        <>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/registro" >Registrar</NavLink>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/login" >Iniciar Sesión</NavLink>
+                        </>
+                    )}
+
+                    {/* Rutas protegidas */}
+                    {usuario && (
+                        <>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/perfil" >Perfil</NavLink>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/mispedidos" >Mis Pedidos</NavLink>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/favoritos" > Favoritos</NavLink>
+                            <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/logout" > Logout</NavLink>
+                        </>
+                    )}
                 </div>
-                ) : null}
-            </div>
             </div>
         </nav>
     );

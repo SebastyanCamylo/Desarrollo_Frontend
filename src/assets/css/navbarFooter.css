@@ -6,20 +6,37 @@ a{
   margin-right: 10px;
 }
 
+.d-flex_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.d-flex{
+  display: flex;
+  justify-content: flex-end;
+}
+
 nav {
   background: #000607;
   padding: 10px;
   color: white;
-  width: auto;
+  width: 100%;
   height: 70px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navHom{
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .car{
-  size: 50px;
+  display: flex;
+  align-items:flex-end;
 }
 
 .active {
