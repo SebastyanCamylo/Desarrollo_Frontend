@@ -25,7 +25,7 @@ export default function Navbar() {
 
             <div className="d-flex">
                 <div className=" navHom car">
-                <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/menu" > Menu</NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/Productos" > Productos</NavLink>
                 <NavLink className={({ isActive }) => (isActive ? 'active' : undefined)} end to="/car" >🛒{FormatCoin(total)}</NavLink>
                 </div>
 

@@ -1,0 +1,28 @@
+.offer-banner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: white;
+    background-image: url('/src/assets/img/wallpaperbetter.jpg');
+    background-size:60%;
+    background-repeat: no-repeat;
+}
+
+.offer-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.offer-banner-button {
+    padding: 10px 20px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}

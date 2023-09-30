@@ -10,7 +10,7 @@ import Home from './page/Home';
 import DetalleMenu from './page/DetalleMenu';
 import Registro from './page/Registro';
 import Login from './page/Login';
-import Menu from './page/Menu';
+import Productos from './page/Productos';
 
 //rutas protegidas//
 import Perfil from './view/Perfil';
@@ -40,7 +40,7 @@ function App() {
         <Routes>
           {/* Rutas públicas */}
           <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="/Productos" element={<Productos />} />
           <Route path="/detalleMenu/:id" element={<DetalleMenu />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/login" element={<Login />} />

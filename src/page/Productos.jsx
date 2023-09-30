@@ -1,4 +1,4 @@
-import "../assets/css/menu.css";
+import "../assets/css/products.css";
 import React ,{ useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import ButtonAdd from "../components/ButtonAdd";
@@ -7,7 +7,7 @@ import Context from "../context/Context";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Menu() {
+export default function Productos() {
   const { platos, favorito, setFavorito } = useUserContext();
   const { usuario} = useContext(Context);
   const navigate = useNavigate();
