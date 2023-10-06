@@ -29,7 +29,7 @@ export default function PlatoDetail() {
                                         item.name.slice(1).toLowerCase()}</h5>
                                     <p className="card-text">{item.desc}</p>
                                     <p className="card-text">
-                                        <b> Detalle de figura:</b>
+                                        <b> Información adicional:</b>
                                     </p>
                                     <ul className="list-unstyled ps-4">
                                         {item.ingredients.map((item) => (
