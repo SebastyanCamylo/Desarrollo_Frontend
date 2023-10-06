@@ -6,7 +6,7 @@ export default function ButtonAdd({idPlato}) {
     const { AddPlatos } = useOperationsContext()
 
     return (
-        <button className="btn btn-danger" onClick={() => {
+        <button className="btn btn-secondary btn-lg" onClick={() => {
             AddPlatos(idPlato)
             toast.success("Agregaste el producto al carro")
         }}>Añadir 🛒</button>
