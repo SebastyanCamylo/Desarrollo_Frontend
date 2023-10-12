@@ -19,19 +19,12 @@ const validarCamposLlenos = ()=>{
   const camposRequeridos = [
     "nombre",
       "apellido",
-      "rut",
-      "telefono",
       "direccion",
-      "numero_de_direccion",
-      "correo",
+      "email",
       "password",
-      "rol",
   ];
   return camposRequeridos.every((campo)=> usuario[campo]?.trim() !== ""); 
 };
-
-
-
 
   const registrarUsuario = async () => {
 
@@ -47,13 +40,14 @@ const validarCamposLlenos = ()=>{
       return;
     }
 
-
+      const urlServer = "http://localhost:3000";
+      const endpoint = "/usuarios";
       try {
         // const urlServer = "https://proyect-backend.onrender.com/api/v1/user";
         // const endpoint = "/register"
 
-        const urlServer = "http://localhost:3001/api/v1/user";
-        const endpoint = "/register"
+        // const urlServer = "http://localhost:3001/api/v1/user";
+        //const endpoint = "/register"
 
         await axios.post(urlServer + endpoint, usuario)
         toast.success("Usuario registrado con éxito 😀", { autoClose: 2000 });
@@ -61,7 +55,7 @@ const validarCamposLlenos = ()=>{
 
       navigate("/login");
     } catch (error) {
-        if(usuario.correo == usuario.correo){
+        if(usuario.email == usuario.email){
 
         toast.error("Algo salió mal...", {
           position: "top-center",
@@ -82,7 +76,7 @@ const validarCamposLlenos = ()=>{
       <h1>Registrar nuevo usuario</h1>
       <hr />
       <div className="form-group mt-1 ">
-        <label>Nombres</label>
+        <label>Nombre</label>
         <input
           value={usuario.nombre}
           onChange={handleSetUsuario}
@@ -108,33 +102,6 @@ const validarCamposLlenos = ()=>{
         />
       </div>
       <div className="form-group mt-1 ">
-        <label>Rut</label>
-        <input
-          value={usuario.rut}
-          onChange={handleSetUsuario}
-          type="text"
-          name="rut"
-          className="form-control"
-          placeholder="Rut"
-          minLength="3"
-          maxLength="10"
-        />
-        <h5 className="fs-6 fw-lighter" >(ingrese rut sin puntos y con guión)</h5>
-      </div>
-      <div className="form-group mt-1 ">
-        <label>Telefono</label>
-        <input
-          value={usuario.telefono}
-          onChange={handleSetUsuario}
-          type="tel"
-          name="telefono"
-          className="form-control"
-          placeholder="Numero de Telefono"
-          minLength="3"
-          maxLength="9"
-        />
-      </div>
-      <div className="form-group mt-1 ">
         <label>Dirección</label>
         <input
           value={usuario.direccion}
@@ -144,29 +111,16 @@ const validarCamposLlenos = ()=>{
           className="form-control"
           placeholder="Dirección"
           minLength="3"
-          maxLength="100"
-        />
-      </div>
-      <div className="form-group mt-1 ">
-        <label>Numero de dirección</label>
-        <input
-          value={usuario.numeroDedireccion}
-          onChange={handleSetUsuario}
-          type="number"
-          name="numero_de_direccion"
-          className="form-control"
-          placeholder="Numero de dirección"
-          min="1"
-          max="9999"
+          maxLength="50"
         />
       </div>
       <div className="form-group mt-1 ">
         <label>Correo electrónico </label>
         <input
-          value={usuario.correo}
+          value={usuario.email}
           onChange={handleSetUsuario}
           type="email"
-          name="correo"
+          name="email"
           className="form-control"
           placeholder="Ingrese Correo"
           minLength="3"
@@ -187,23 +141,7 @@ const validarCamposLlenos = ()=>{
         />
         <h5 className="fs-6 fw-lighter">(Deben se más de 6 digitos)</h5>
       </div>
-      <div className="form-group mt-1 ">
-        <label>Rol</label>
-        <select
-          value={usuario.rol}
-          onChange={handleSetUsuario}
-          name="rol"
-          className="form-select"
-        >
-          <option disabled selected>
-            Seleccione un rol
-          </option>
-          <option value="cliente">Cliente</option>
-          <option value="administrativo">Administrativo</option>
-
-        </select>
-        </div>
-        </form>
+      </form>
 
       <button onClick={registrarUsuario} className="btn btn-light mt-3">
         Registrarme
